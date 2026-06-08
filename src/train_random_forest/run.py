@@ -109,7 +109,8 @@ def go(args):
     # Plot feature importance
     fig_feat_imp = plot_feature_importance(sk_pipe, processed_features)
 
-    run.summary['r2'] = mae
+    run.summary["r2"] = r_squared
+    run.summary["mae"] = mae
     run.log(
         {
           "feature_importance": wandb.Image(fig_feat_imp),
